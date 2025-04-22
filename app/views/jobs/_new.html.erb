@@ -1,0 +1,12 @@
+<%= form_with model: [resume, Job.new] do |form| %>
+New Job:<br>
+<%= form.label :title %><br>
+<%= form.text_field :title %><br>
+<%= form.label :company %><br>
+<%= form.text_area :company %><br>
+<%= form.label :location %><br>
+<%= form.text_field :location %><br>
+<%= form.label :summary %><br>
+<%= form.text_field :summary %><br>
+<%= form.submit "Create Job" %>
+<% end %>

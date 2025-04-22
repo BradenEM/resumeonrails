@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_04_16_134430) do
+ActiveRecord::Schema[8.0].define(version: 2025_04_19_182949) do
+  create_table "jobs", force: :cascade do |t|
+    t.integer "resume_id", null: false
+    t.string "company"
+    t.string "location"
+    t.string "title"
+    t.text "summary"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["resume_id"], name: "index_jobs_on_resume_id"
+  end
+
   create_table "resumes", force: :cascade do |t|
     t.string "name"
     t.string "email"
@@ -19,4 +30,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_16_134430) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_foreign_key "jobs", "resumes"
 end

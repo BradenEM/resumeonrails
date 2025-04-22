@@ -1,0 +1,8 @@
+<div id="<%= dom_id(job) %>">
+    <%= job.title %><br>
+    <%= job.company %><br>
+    <%= job.location %><br>
+    <%= job.summary %>
+    <%= link_to "Edit this job", edit_resume_job_path(job.resume) %>
+    <%= button_to "Destroy this job", resume_job_path(job.resume,job), method: :delete %>
+</div>
