@@ -1,3 +1,3 @@
 class Resume < ApplicationRecord
-  has_many :jobs
+  has_many :jobs, dependent: :destroy
 end
