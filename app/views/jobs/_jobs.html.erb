@@ -4,4 +4,12 @@
     <%= render resume.jobs %>
 </div>
 
-<%= render "jobs/new", resume: resume %>
+<div data-controller="toggle">
+    <button data-toggle-target="toggleable" type="button" data-action="click->toggle#toggle">
+        Add New Job</button>
+    <div data-toggle-target="toggleable" class="d-none">
+        <h3>New Job:</h3>
+        <%= render "jobs/new", resume: resume %>
+    </div>
+
+</div>
