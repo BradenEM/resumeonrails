@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get "pages/home"
+  get "pages/dashboard"
   resources :resumes do
     resources :jobs
   end
