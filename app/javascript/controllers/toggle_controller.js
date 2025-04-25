@@ -4,8 +4,8 @@ export default class extends Controller {
   static targets = ["toggleable", "button"];
 
   toggle() {
-    this.toggleableTarget.classList.toggle("d-none");
+    this.toggleableTarget.classList.toggle("hidden");
 
-    this.buttonTarget.classList.toggle("d-none");
+    this.buttonTarget.classList.toggle("hidden");
   }
 }

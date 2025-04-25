@@ -1,0 +1,57 @@
+body {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.container {
+  margin: 10px;
+}
+
+.list-title {
+  font-size: 64px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.link {
+  width: 183px;
+  height: 40px;
+  color: #f1f5f9;
+  font-family: "Inter";
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 3.5;
+  text-align: left;
+}
+
+.hidden {
+  display: none;
+}
+
+.nav-title {
+  width: 114px;
+  height: 50px;
+  color: #ffffff;
+  font-family: "Baloo 2";
+  font-weight: 800;
+  font-size: 33px;
+  letter-spacing: 0.5px;
+  text-align: left;
+  margin: 10px;
+}
+
+.button-1 {
+  width: 120px;
+  height: 48px;
+  padding: 0px 16px 0px 16px;
+  background: #6e31de;
+  color: #ffffff;
+  border-color: #6e31de;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 9px 9px 9px 9px;
+  font-family: "Inter";
+  font-weight: 700;
+  font-size: 24px;
+  text-align: center;
+}

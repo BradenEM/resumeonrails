@@ -7,7 +7,7 @@
 <div data-controller="toggle">
     <button data-toggle-target="button" type="button" data-action="click->toggle#toggle" class="">
         Add New Job</button>
-    <div data-toggle-target="toggleable" class="d-none">
+    <div data-toggle-target="toggleable" class="hidden">
         <h3>New Job:</h3>
         <%= render "jobs/new", resume: resume %>
     </div>
