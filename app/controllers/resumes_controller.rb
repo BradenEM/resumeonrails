@@ -21,7 +21,7 @@ class ResumesController < ApplicationController
 
   # POST /resumes or /resumes.json
   def create
-    @resume = Resume.new(resume_params)
+    @resume = Current.user.resumes.build(resume_params)
 
     respond_to do |format|
       if @resume.save
@@ -60,11 +60,11 @@ class ResumesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_resume
-      @resume = Resume.find(params.expect(:id))
+      @resume = Current.user.resumes.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
     def resume_params
-      params.expect(resume: [ :name, :email, :phone, :summary, :title ])
+      params.expect(resume: [ :name, :email, :phone, :summary, :title  ])
     end
 end

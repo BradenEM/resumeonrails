@@ -3,6 +3,6 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    @resumes = Resume.all
+    @resumes = Current.user.resumes
   end
 end
