@@ -2,6 +2,16 @@ require "application_system_test_case"
 
 class ResumesTest < ApplicationSystemTestCase
   setup do
+    @user = users(:one)
+
+    visit new_session_url
+
+    fill_in "email_address", with: @user.email_address
+    fill_in "password", with: "password"
+
+    click_on "Sign in"
+    click_on "Dashboard"
+
     @resume = resumes(:one)
   end
 
@@ -11,7 +21,7 @@ class ResumesTest < ApplicationSystemTestCase
   end
 
   test "should create resume" do
-    visit resumes_url
+    visit resumes_path
     click_on "New resume"
 
     fill_in "Email", with: @resume.email
@@ -25,8 +35,7 @@ class ResumesTest < ApplicationSystemTestCase
   end
 
   test "should update Resume" do
-    visit resume_url(@resume)
-    click_on "Edit this resume", match: :first
+    visit edit_resume_path(@resume)
 
     fill_in "Email", with: @resume.email
     fill_in "Name", with: @resume.name
@@ -39,7 +48,7 @@ class ResumesTest < ApplicationSystemTestCase
   end
 
   test "should destroy Resume" do
-    visit resume_url(@resume)
+    visit resume_path(@resume)
     click_on "Destroy this resume", match: :first
 
     assert_text "Resume was successfully destroyed"
