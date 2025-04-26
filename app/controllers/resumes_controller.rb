@@ -3,7 +3,7 @@ class ResumesController < ApplicationController
 
   # GET /resumes or /resumes.json
   def index
-    @resumes = Resume.all
+    @resumes = Current.user.resumes
   end
 
   # GET /resumes/1 or /resumes/1.json
