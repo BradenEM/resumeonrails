@@ -3,8 +3,8 @@
 <%= render @resume %>
 
 <div>
-    <%= link_to "Edit this resume", edit_resume_path(@resume) %> |
-    <%= link_to "Back to resumes", resumes_path %>
+    <%= link_to "Edit this resume", edit_resume_path(@resume), class: "link" %> |
+    <%= link_to "Back to resumes", resumes_path, class: "link" %>
 
     <%= button_to "Destroy this resume", @resume, method: :delete %>
 </div>

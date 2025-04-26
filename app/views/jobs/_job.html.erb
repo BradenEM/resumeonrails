@@ -4,7 +4,7 @@
     <%= job.location %><br>
     <%= job.summary %>
     <p>
-        <%= link_to "Edit this job", edit_resume_job_path(job.resume,job) %>
+        <%= link_to "Edit this job", edit_resume_job_path(job.resume,job), class: "link" %>
     </p>
-    <%= button_to "Destroy this job", resume_job_path(job.resume,job), method: :delete %>
+    <%= button_to "Destroy this job", resume_job_path(job.resume,job), method: :delete, class:  %>
 </div>
