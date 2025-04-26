@@ -5,9 +5,11 @@ one:
   email: MyString
   phone: MyString
   summary: MyString
+  user: one
 
 two:
   name: MyString
   email: MyString
   phone: MyString
   summary: MyString
+  user: two
