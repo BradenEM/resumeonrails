@@ -1,5 +1,9 @@
-<nav>
-    <div>
-        <%= link_to "resumeonrails", root_path, class: "nav-title" %>
+<nav class="bg-gray-800 text-white py-4">
+    <div class="container mx-auto flex justify-between items-center px-4">
+        <%= link_to "resumeonrails", root_path, class: "font-bold text-xl" %>
+        <% if Current.user %>
+        <%= button_to "Log Out", session_path, method: :delete, class: "hover:text-gray-300" %>
+        <% end %>
+    </div>
 
 </nav>

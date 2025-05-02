@@ -1,3 +1,8 @@
-<div>
-    <%= render "resumes/index", resumes: @resumes %>
+<div class="container mx-auto">
+    <div id="dashboard-page" class="py-8 ">
+        <h1 class="text-2xl font-semibold mb-6 text-gray-700">Your Resumes</h1>
+        <ul class="space-y-4">
+            <%= render "resumes/index", resumes: @resumes %>
+        </ul>
+    </div>
 </div>

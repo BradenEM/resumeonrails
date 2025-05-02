@@ -1,0 +1,15 @@
+<div class=" mx-auto bg-white shadow-md rounded-md p-8" data-controller="autosave">
+    <h1 class="text-2xl font-semibold mb-6 text-gray-700">Resume Editor</h1>
+    <div class="grid grid-cols-2 gap-4">
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            <%= render "resume_editor_form", resume: @resume %>
+        </div>
+
+        <div class="bg-white rounded-md p-6 border border-gray-200" data-autosave-target="preview">
+            <h2 class="text-xl font-semibold mb-4 text-gray-700">Resume Preview</h2>
+            <%= render @resume %>
+        </div>
+    </div>
+</div>

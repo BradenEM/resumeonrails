@@ -1,23 +1,10 @@
 <div id="<%= dom_id resume %>">
 
-    <p>
-        <%= resume.title %>
-    </p>
+    <div class="mb-6 border-b pb-4">
+        <div class="text-2xl font-bold text-gray-800 mb-1"><%= resume.name %>
+            <div class="text-gray-600 text-sm"><%=resume.email%> | <%= resume.phone%>
+            </div>
 
-    <p>
-        <%= resume.name %>
-    </p>
+        </div>
 
-    <p>
-        <%= resume.email %>
-    </p>
-
-    <p>
-        <%= resume.phone %>
-    </p>
-
-    <p>
-        <%= resume.summary %>
-    </p>
-
-</div>
+    </div>

@@ -1,5 +1,5 @@
 class ResumesController < ApplicationController
-  before_action :set_resume, only: %i[ show edit update destroy ]
+  before_action :set_resume, only: %i[ show edit update destroy resume_editor ]
 
   # GET /resumes or /resumes.json
   def index
@@ -39,7 +39,10 @@ class ResumesController < ApplicationController
     respond_to do |format|
       if @resume.update(resume_params)
         format.html { redirect_to @resume, notice: "Resume was successfully updated." }
-        format.json { render :show, status: :ok, location: @resume }
+        format.json do
+          preview_html = render_to_string(partial: "resumes/resume", locals: { resume: @resume }, formats: [ :html ])
+          render json: { message: "Saved", resume: @resume, previewHtml: preview_html }, status: :ok
+        end
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @resume.errors, status: :unprocessable_entity }
@@ -55,6 +58,10 @@ class ResumesController < ApplicationController
       format.html { redirect_to resumes_path, status: :see_other, notice: "Resume was successfully destroyed." }
       format.json { head :no_content }
     end
+  end
+
+  def resume_editor
+    @resume
   end
 
   private

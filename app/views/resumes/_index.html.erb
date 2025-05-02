@@ -2,15 +2,19 @@
 
 <% content_for :title, "Resumes" %>
 
-<p class="list-title">Resumes</p>
 
 <div id="resumes">
     <% @resumes.each do |resume| %>
-    <%= render resume %>
-    <p>
-        <%= link_to "Show this resume", resume, class: "link" %>
-    </p>
+    <li class="bg-white shadow-md rounded-md p-4 flex justify-between items-center">
+
+        <p class="text-blue-500"><%= resume.title %></p>
+        <div>
+            <%= link_to "View", resume, class: "text-green-500 hover:underline"%>
+        </div>
+
+
+    </li>
     <% end %>
 </div>
 
-<%= link_to "New resume", new_resume_path %>
+<%= link_to "+ Create New Resume", new_resume_path, class: "bg-blue-500 hover:bg-blue-700 text_white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>

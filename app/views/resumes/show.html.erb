@@ -2,11 +2,12 @@
 
 <%= render @resume %>
 
-<div>
-    <%= link_to "Edit this resume", edit_resume_path(@resume), class: "link" %> |
-    <%= link_to "Back to resumes", pages_dashboard_path, class: "link" %>
+<div class="mt-6">
+    <div class="flex items-center space-x-4 mb-2">
+        <%= link_to "Edit", resume_editor_resume_path, class: "bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
+        <%= button_to "Delete", @resume, method: :delete, class: "bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
+    </div>
+    <%= link_to "Back to resumes", pages_dashboard_path, class: "text-blue-500 hover:underline" %>
 
-    <%= button_to "Destroy this resume", @resume, method: :delete %>
+    <%= render "jobs/jobs", resume: @resume%>
 </div>
-
-<%= render "jobs/jobs", resume: @resume%>

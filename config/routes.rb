@@ -3,7 +3,11 @@ Rails.application.routes.draw do
   resources :passwords, param: :token
   get "pages/home"
   get "pages/dashboard"
+  get "pages/resumeEditor"
   resources :resumes do
+    member do
+      get :resume_editor
+    end
     resources :jobs
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -17,5 +21,5 @@ Rails.application.routes.draw do
   # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
 
   # Defines the root path route ("/")
-  root "pages#home"
+  root "pages#dashboard"
 end
