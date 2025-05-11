@@ -46,7 +46,6 @@ class ResumesTest < ApplicationSystemTestCase
     fill_in "resume_summary", with: @resume.summary
 
     # TODO Need to assert the changes
-
   end
 
   test "should destroy Resume" do

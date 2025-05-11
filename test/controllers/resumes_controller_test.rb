@@ -6,7 +6,7 @@ class ResumesControllerTest < ActionDispatch::IntegrationTest
     @resume = resumes(:one)
 
     post session_path, params: { email_address: @user.email_address, password: "password" }
-    
+
     # assert_equal @user.id, session[:user_id], "Session user_id was not set correctly after login POST."
   end
 

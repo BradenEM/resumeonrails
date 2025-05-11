@@ -32,7 +32,7 @@ module Authentication
     session_record = find_session_by_cookie
     if session_record
       Current.session = session_record
-      Current.user = session_record.user 
+      Current.user = session_record.user
     else
       Current.user = nil
       Current.session = nil
@@ -49,7 +49,7 @@ module Authentication
   end
 
   def after_authentication_url
-    session.delete(:return_to_after_authenticating) || dashboard_path 
+    session.delete(:return_to_after_authenticating) || dashboard_path
   end
 
   def start_new_session_for(user)
@@ -60,7 +60,7 @@ module Authentication
 
     cookies.signed.permanent[:session_id] = { value: session_record.id, httponly: true, same_site: :lax }
 
-    session_record 
+    session_record
   end
 
   def terminate_session
