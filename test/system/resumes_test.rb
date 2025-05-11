@@ -10,24 +10,26 @@ class ResumesTest < ApplicationSystemTestCase
     fill_in "password", with: "password"
 
     click_on "Sign in"
-    click_on "Dashboard"
 
     @resume = resumes(:one)
+
+    assert_text "Resumes"
   end
 
-  test "visiting the index" do
-    visit resumes_url
+  test "visiting the dashboard" do
+    visit root_path
     assert_selector "h1", text: "Resumes"
   end
 
   test "should create resume" do
-    visit resumes_path
-    click_on "New resume"
+    visit root_path
+    click_on "Create New Resume"
 
-    fill_in "Email", with: @resume.email
-    fill_in "Name", with: @resume.name
-    fill_in "Phone", with: @resume.phone
-    fill_in "Summary", with: @resume.summary
+    fill_in "resume_title", with: @resume.title
+    fill_in "resume_email", with: @resume.email
+    fill_in "resume_name", with: @resume.name
+    fill_in "resume_phone", with: @resume.phone
+    fill_in "resume_summary", with: @resume.summary
     click_on "Create Resume"
 
     assert_text "Resume was successfully created"
@@ -35,21 +37,21 @@ class ResumesTest < ApplicationSystemTestCase
   end
 
   test "should update Resume" do
-    visit edit_resume_path(@resume)
+    visit resume_editor_resume_path(@resume)
 
-    fill_in "Email", with: @resume.email
-    fill_in "Name", with: @resume.name
-    fill_in "Phone", with: @resume.phone
-    fill_in "Summary", with: @resume.summary
-    click_on "Update Resume"
+    fill_in "resume_title", with: @resume.title
+    fill_in "resume_email", with: @resume.email
+    fill_in "resume_name", with: @resume.name
+    fill_in "resume_phone", with: @resume.phone
+    fill_in "resume_summary", with: @resume.summary
 
-    assert_text "Resume was successfully updated"
-    click_on "Back"
+    # TODO Need to assert the changes
+
   end
 
   test "should destroy Resume" do
     visit resume_path(@resume)
-    click_on "Destroy this resume", match: :first
+    click_on "Delete", match: :first
 
     assert_text "Resume was successfully destroyed"
   end

@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resource :session
   resources :passwords, param: :token
   get "pages/home"
-  get "pages/dashboard"
+  get "pages/dashboard", as: "dashboard"
   get "pages/resumeEditor"
   resources :resumes do
     member do

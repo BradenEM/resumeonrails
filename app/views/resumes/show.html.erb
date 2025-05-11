@@ -7,7 +7,7 @@
         <%= link_to "Edit", resume_editor_resume_path, class: "bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
         <%= button_to "Delete", @resume, method: :delete, class: "bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
     </div>
-    <%= link_to "Back to resumes", pages_dashboard_path, class: "text-blue-500 hover:underline" %>
+    <%= link_to "Back to resumes", dashboard_path, class: "text-blue-500 hover:underline" %>
 
     <%= render "jobs/jobs", resume: @resume%>
 </div>
