@@ -32,7 +32,7 @@ class ResumesTest < ApplicationSystemTestCase
     fill_in "resume_summary", with: @resume.summary
     click_on "Create Resume"
 
-    assert_text "Resume was successfully created"
+    assert_text "Resume was successfully created."
     click_on "Back"
   end
 
